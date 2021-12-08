@@ -1,2 +1,3 @@
 vue3/node_modules/**
 websocket/chat/node_modules/**
+websocket/server/node_modules/**
