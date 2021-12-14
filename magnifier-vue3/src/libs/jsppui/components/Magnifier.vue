@@ -69,4 +69,11 @@ export default {
 </script>
 <style lang="scss" scoped>
 //@import url(); 引入公共css类
+.img-wrap {
+  border: 1px solid #add;
+  box-shadow: 0 0 5px #999;
+  .static-img {
+    width: 100%;
+  }
+}
 </style>
