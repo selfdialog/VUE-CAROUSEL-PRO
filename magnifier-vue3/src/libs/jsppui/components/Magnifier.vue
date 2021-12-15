@@ -65,15 +65,41 @@ export default {
     imgUrl: String,
     imgAlt: String,
   },
-}
+};
 </script>
 <style lang="scss" scoped>
 //@import url(); 引入公共css类
 .img-wrap {
-  border: 1px solid #add;
+  position: relative;
+  border: 1px solid #ddd;
   box-shadow: 0 0 5px #999;
+
   .static-img {
     width: 100%;
+  }
+
+  .mag-wrap {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    background-color: #fff;
+    box-shadow: 0 0 3px #ccc;
+    cursor: move;
+    overflow: hidden;
+
+    &.show {
+      //增加了一个类名
+      display: block;
+      transform: scale(1.5);
+    }
+
+    .mag-img {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
   }
 }
 </style>
