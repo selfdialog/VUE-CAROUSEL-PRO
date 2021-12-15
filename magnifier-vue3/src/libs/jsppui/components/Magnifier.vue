@@ -1,6 +1,7 @@
 <!--  -->
 <template>
   <div
+    v-magnifier
     class="img-wrap"
     :style="{
       width: imgWidth + 'px',
@@ -36,10 +37,13 @@
 <script>
 //这里可以导入其他文件（比如：组件，工具js，第三方插件js，json文件，图片文件等等）
 //例如：import 《组件名称》 from '《组件路径》';
-
+import { magnifier } from "../directives"
 export default {
   //import引入的组件需要注入到对象中才能使用
   name: "Magnifier",
+  directives: {
+    magnifier,
+  },
   props: {
     imgWidth: {
       type: Number,
@@ -65,7 +69,7 @@ export default {
     imgUrl: String,
     imgAlt: String,
   },
-};
+}
 </script>
 <style lang="scss" scoped>
 //@import url(); 引入公共css类
