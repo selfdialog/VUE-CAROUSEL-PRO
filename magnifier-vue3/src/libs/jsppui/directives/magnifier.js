@@ -29,7 +29,8 @@ export default {
         }
 
         function handleMousemove(el) {
-            showMag(getXY(el).x, getXY(el).y);
+            const { x, y, mouseX, mouseY } = getXY(el)
+            showMag(x, y, mouseX, mouseY);
         }
 
         function handleMouseout() {
@@ -42,6 +43,12 @@ export default {
             oMagWrap.style.top = y + 'px';
             oMagImg.style.left = -x + 'px';
             oMagImg.style.top = -y + 'px';
+
+            if (mouseX < 0 || mouseY < 0 || mouseX > imgWidth || mouseY > imgHeight) {
+                oMagWrap.className = 'mag-wrap'
+                    //取消之后解绑
+                document.removeEventListener('mousemove', handleMousemove, false)
+            }
         }
 
         function getXY(el) {
