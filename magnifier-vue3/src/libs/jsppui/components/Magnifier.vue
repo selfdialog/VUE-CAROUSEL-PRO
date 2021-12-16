@@ -51,7 +51,7 @@ export default {
     },
     imgHeight: {
       type: Number,
-      default: 500,
+      default: 156,
     },
     magWidth: {
       type: Number,
@@ -89,7 +89,7 @@ export default {
     left: 0;
     z-index: 2;
     background-color: #fff;
-    box-shadow: 0 0 3px #ccc;
+    box-shadow: 0 0 3px #000;
     cursor: move;
     overflow: hidden;
 

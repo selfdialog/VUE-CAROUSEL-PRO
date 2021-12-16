@@ -27,7 +27,7 @@ export default {
       imgAlt: "某宝图片",
       blank: true,
       imgWidth: 375,
-      imgHeight: 481,
+      imgHeight: 156,
       magWidth: 100,
       magHeight: 100,
     })
