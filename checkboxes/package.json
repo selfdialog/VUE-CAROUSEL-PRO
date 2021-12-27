@@ -1,0 +1,16 @@
+{
+  "name": "checkboxes",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.45.1",
+    "vite": "^2.7.7"
+  }
+}
