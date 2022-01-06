@@ -41,14 +41,22 @@ function MyCheckboxGroup({
     onCheckedDataChange(checkedData)
   },[checkedData])
 
-  const getTd = (cells) => {
+  const getTd = () => {
     const arr = [];
-    cells.map(item => {
+    headerCells.map(item => {
       arr.push(<th key={item}>{item}</th>);
     });
 
     console.log(arr);
 
+    return arr;
+  }
+  const getDataToTd=(item) =>{
+    const arr = [];
+    dataProps.map(prop => {
+      arr.push(<td key={prop}>{item[prop]}</td>);
+    })
+    console.log(arr);
     return arr;
   }
 
@@ -64,9 +72,10 @@ function MyCheckboxGroup({
           ></MyCheckbox>
         </td>
         {
-          dataProps.map(prop => {
-            <td key={prop}>{item[prop]}</td>
-          })
+          getDataToTd(item)
+          // dataProps.map(prop => {
+          //   <td key={prop}>{item[prop]}</td>
+          // })
         }
         <td>
           <MyButton
@@ -102,7 +111,7 @@ function MyCheckboxGroup({
           </tr>
           <tr>
             {
-              getTd(headerCells)
+              getTd()
             }
           </tr>
         </thead>
