@@ -3,3 +3,4 @@ websocket/chat/node_modules/**
 websocket/server/node_modules/**
 magnifier-vue3/node_modules/**
 checkboxes/node_modules/**
+pinia/pinia-examples/node_modules/**
