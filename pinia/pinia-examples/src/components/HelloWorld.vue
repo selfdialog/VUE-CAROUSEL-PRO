@@ -1,5 +1,9 @@
 <template>
   <p>{{mainStore.count}}</p>
+  <p>{{mainStore.arr}}</p>
+  <p>{{mainStore.count10}}</p>
+  <p>{{mainStore.count10}}</p>
+  <p>{{mainStore.count10}}</p>
 
   <hr>
 
@@ -30,8 +34,23 @@
   console.log(count.value);
 
   const handleChangeState=() => {
-    // 数据修改最简单的方式
-    mainStore.count++
+    // 方式一：数据修改最简单的方式
+    // mainStore.count++
+
+    // 方式二：使用$patch批量更新
+    // mainStore.$patch({
+    //   count: mainStore.count+1,
+    //   arr: [...mainStore.arr, 4]
+    // })
+
+    // 方式三：更好的批量更新方式：$patch 一个函数
+    // mainStore.$patch(state=>{
+    //   state.count++
+    //   state.arr.push(4)
+    // })
+
+    // 方式四：逻辑多的话封装到action做处理
+    mainStore.changeState(10)
   }
   </script>
   

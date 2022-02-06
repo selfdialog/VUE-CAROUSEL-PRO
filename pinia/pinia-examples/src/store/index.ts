@@ -13,19 +13,43 @@ export const useMainStore = defineStore('main', {
    */
   state: () => {
     return {
-      count:100
+      count:100,
+      arr:[1,2,3]
     }
   },
 
   /**
    * 类似于组件的computed，用来封装计算属性，有缓存的功能
    */
-  getters: {},
+  getters: {
+    // 函数参数的可选对象：state状态对象
+    // count10(state){
+    //   // 有缓存功能
+    //   console.log('调用了');
+    //   return state.count + 10
+    // }
+
+    // 如果使用了this则必须指定返回值的类型，否则推导不出来
+    count10():number{
+      // 有缓存功能
+      console.log('调用了');
+      return this.count + 10
+    }
+  },
 
   /**
    * 类似于组件的methods，封装业务逻辑，修改state
    */
-  actions: {}
+  actions: {
+    // 注意：不能使用箭头函数定义action，因为箭头函数绑定外部this
+    changeState(num: number){
+      this.count+=num
+      this.arr.push(4)
+
+      // this.$patch({})
+      // this.$patch(state=>{})
+    }
+  }
 })
 
 
