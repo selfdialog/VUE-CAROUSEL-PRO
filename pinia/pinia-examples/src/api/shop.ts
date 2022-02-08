@@ -16,7 +16,7 @@ export const getProducts = async () => {
   return _products
 }
 
-export const buyProduct = async () => {
+export const buyProducts = async () => {
   await wait(100)
   return Math.random() > 0.5
 }
