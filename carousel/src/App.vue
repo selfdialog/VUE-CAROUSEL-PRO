@@ -1,7 +1,13 @@
 <template>
   <div id="app">
     <div class="container">
-      <carousel>
+      <carousel
+        :autoplay="true"
+        :duration="3000"
+        :initial="0"
+        :hasDot="true"
+        :hasDirector="true"
+      >
         <car-item v-for="(item, index) of carData" :key="index">
           <img :src="require(`./assets/img/${item.img_name}`)" />
         </car-item>

@@ -9,6 +9,20 @@
 <script>
 export default {
   name: "Carousel",
+  props:{
+    autoplay: {
+      type: Boolean,
+      default: true
+    },
+    duration:{
+      type:Number,
+      default: 3000
+    },
+    initial:{
+      type: Number,
+      default: 0
+    }
+  }
 };
 </script>
 <style lang="scss" scoped>
