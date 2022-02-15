@@ -4,7 +4,7 @@
       <carousel
         :autoplay="true"
         :duration="3000"
-        :initial="0"
+        :initial="1"
         :hasDot="true"
         :hasDirector="true"
       >

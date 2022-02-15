@@ -7,20 +7,53 @@
 </template>
 
 <script>
+import {reactive, toRefs} from 'vue'
 export default {
   name: "Carousel",
   props:{
+    /**
+     * 是否自动滚动
+     */
     autoplay: {
       type: Boolean,
       default: true
     },
+    /**
+     * 轮播间隔时间
+     */
     duration:{
       type:Number,
       default: 3000
     },
+    /**
+     * 初始图片索引
+     */
     initial:{
       type: Number,
       default: 0
+    },
+    /**
+     * 是否显示小圆点
+     */
+    hasDot:{
+      type: Boolean,
+      default: true
+    },
+    /**
+     * 是否显示左右的指示按钮
+     */
+    hasDirector:{
+      type: Boolean,
+      default: true
+    }
+  },
+  setup(props) {
+    const state = reactive({
+      currentIndex: props.initial
+    });
+
+    return {
+      ...toRefs(state)
     }
   }
 };
