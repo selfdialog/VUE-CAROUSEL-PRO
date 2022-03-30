@@ -7,7 +7,12 @@
 </template>
 
 <script>
-import {reactive, toRefs} from 'vue'
+import {
+  reactive,
+  toRefs,
+  onMounted, //挂载
+  onBeforeUnmount //在组件卸载之前
+  } from 'vue'
 export default {
   name: "Carousel",
   props:{
@@ -52,6 +57,14 @@ export default {
       currentIndex: props.initial
     });
 
+    let t = null;
+    const autoPlay = () => {
+      if(props.autoplay){
+        t = setInterval(() => {
+          
+        }, props.duration)
+      }
+    }
     return {
       ...toRefs(state)
     }
