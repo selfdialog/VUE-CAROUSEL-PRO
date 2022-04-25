@@ -14,6 +14,7 @@ export default defineComponent({
     })
 
     const numberRef= ref(1)
+    console.log('垃圾');
     /* setInterval(() => {
       state.name+='1'
       numberRef.value+=1
